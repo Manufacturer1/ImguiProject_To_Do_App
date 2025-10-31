@@ -56,10 +56,9 @@ void UseImGui::Init(GLFWwindow* window, const char* glsl_version) {
 
 	io.Fonts->AddFontDefault();
 
-	title_font = io.Fonts->AddFontFromFileTTF("C:/Users/Mihai/Desktop/ImguiProject/ImguiProject/Fonts/inter-bold.ttf", TITLE_FONT_SISE);
-	default_font = io.Fonts->AddFontFromFileTTF("C:/Users/Mihai/Desktop/ImguiProject/ImguiProject/Fonts/inter.ttf", DEFAULT_FONT_SIZE);
-
-	time_font = io.Fonts->AddFontFromFileTTF("C:/Users/Mihai/Desktop/ImguiProject/ImguiProject/Fonts/inter.ttf", TIME_FONT_SIZE);
+	title_font = io.Fonts->AddFontFromFileTTF("Fonts/inter-bold.ttf", TITLE_FONT_SISE);
+	default_font = io.Fonts->AddFontFromFileTTF("Fonts/inter.ttf", DEFAULT_FONT_SIZE);
+	time_font = io.Fonts->AddFontFromFileTTF("Fonts/inter.ttf", TIME_FONT_SIZE);
 	IM_ASSERT(title_font != NULL);
 
 
@@ -69,12 +68,12 @@ void UseImGui::Init(GLFWwindow* window, const char* glsl_version) {
 	button_styles();
 
 	ImageData backImage;
-	LoadTextureFromFile("C:/Users/Mihai/Desktop/ImguiProject/ImguiProject/icons/back.png", &backImage.textureID, &backImage.width, &backImage.height);
+	LoadTextureFromFile("icons/back.png", &backImage.textureID, &backImage.width, &backImage.height);
 	backImage.name = "Back Image";
 	images.push_back(backImage);
 
 	ImageData removeImage;
-	LoadTextureFromFile("C:/Users/Mihai/Desktop/ImguiProject/ImguiProject/icons/remove.png",&removeImage.textureID, &removeImage.width, &removeImage.height);
+	LoadTextureFromFile("icons/remove.png", &removeImage.textureID, &removeImage.width, &removeImage.height);
 	removeImage.name = "Remove Image";
 	images.push_back(removeImage);
 

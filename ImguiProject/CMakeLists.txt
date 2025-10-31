@@ -4,6 +4,18 @@
 
 # Add source to this project's executable.
 add_executable (ImguiProject "ImguiProject.cpp"  "UseImgui.h" "UseImgui.cpp" "ManageItems.h" "ImGuiStyles.h"  "loadTexture.h")
+# Copy Fonts folder
+add_custom_command(TARGET ImguiProject POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/ImguiProject/Fonts"
+        $<TARGET_FILE_DIR:ImguiProject>/Fonts)
+
+# Copy icons folder
+add_custom_command(TARGET ImguiProject POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/ImguiProject/icons"
+        $<TARGET_FILE_DIR:ImguiProject>/icons)
+
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ImguiProject PROPERTY CXX_STANDARD 20)
